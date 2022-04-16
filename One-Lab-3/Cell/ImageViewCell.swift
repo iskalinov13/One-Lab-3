@@ -15,6 +15,7 @@ class ImageViewCell: UITableViewCell, ConfigurableCell {
     
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -33,9 +34,12 @@ class ImageViewCell: UITableViewCell, ConfigurableCell {
     }
     
     private func layoutUI() {
+        selectionStyle = .none
         contentView.addSubview(avatarImageView)
         avatarImageView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(8)
+            $0.width.equalTo(100)
+            $0.height.equalTo(50)
         }
     }
 }

@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				E5510437280AE59C008C66DA /* Application Layer */,
-				E5510427280AE588008C66DA /* ViewController.swift */,
+				E5510443280B0551008C66DA /* Pages */,
 				E551043E280AF3E1008C66DA /* Cell */,
 				E5510429280AE588008C66DA /* Main.storyboard */,
 				E551042C280AE589008C66DA /* Assets.xcassets */,
@@ -120,6 +120,14 @@
 				E551043F280AF439008C66DA /* ConfigurableCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E5510443280B0551008C66DA /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				E5510427280AE588008C66DA /* ViewController.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

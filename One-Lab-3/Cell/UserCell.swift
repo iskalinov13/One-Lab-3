@@ -8,9 +8,14 @@
 import UIKit
 
 
-struct User {
+struct User: Hashable {
     let imageName: String
     let name: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(imageName)
+        hasher.combine(name)
+    }
 }
 
 typealias UserCellConfigurator = TableCellConfigurator<UserCell, User>
@@ -27,12 +32,12 @@ class UserCell: UITableViewCell, ConfigurableCell {
         return label
     }()
     
-    private var stackView: UIStackView {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [avatarImageView, nameLabel])
         stackView.axis = .horizontal
         stackView.spacing = 8
         return stackView
-    }
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -57,7 +62,15 @@ class UserCell: UITableViewCell, ConfigurableCell {
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(8)
-            $0.size.equalTo(30)
         }
+        
+        avatarImageView.snp.makeConstraints {
+            $0.size.equalTo(50)
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        accessoryType = .none
     }
 }
