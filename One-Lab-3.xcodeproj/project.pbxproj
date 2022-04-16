@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		252B8E410432BCA6AD3441BC /* Pods_One_Lab_3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602D403648306815AF19AA12 /* Pods_One_Lab_3.framework */; };
 		E5510424280AE588008C66DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5510423280AE588008C66DA /* AppDelegate.swift */; };
 		E5510426280AE588008C66DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5510425280AE588008C66DA /* SceneDelegate.swift */; };
 		E5510428280AE588008C66DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5510427280AE588008C66DA /* ViewController.swift */; };
 		E551042B280AE588008C66DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5510429280AE588008C66DA /* Main.storyboard */; };
 		E551042D280AE589008C66DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E551042C280AE589008C66DA /* Assets.xcassets */; };
 		E5510430280AE589008C66DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E551042E280AE589008C66DA /* LaunchScreen.storyboard */; };
+		E5510439280AE7CC008C66DA /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5510438280AE7CC008C66DA /* ImageViewCell.swift */; };
+		E551043B280AF180008C66DA /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E551043A280AF180008C66DA /* UserCell.swift */; };
+		E551043D280AF319008C66DA /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E551043C280AF319008C66DA /* TextCell.swift */; };
+		E5510440280AF439008C66DA /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E551043F280AF439008C66DA /* ConfigurableCell.swift */; };
+		E5510442280AF524008C66DA /* CellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5510441280AF524008C66DA /* CellConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4EABF8F7BA7C6115D10ECC48 /* Pods-One-Lab-3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-Lab-3.debug.xcconfig"; path = "Target Support Files/Pods-One-Lab-3/Pods-One-Lab-3.debug.xcconfig"; sourceTree = "<group>"; };
+		602D403648306815AF19AA12 /* Pods_One_Lab_3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_One_Lab_3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A289A9154311D6FDB3F3ADBA /* Pods-One-Lab-3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-One-Lab-3.release.xcconfig"; path = "Target Support Files/Pods-One-Lab-3/Pods-One-Lab-3.release.xcconfig"; sourceTree = "<group>"; };
 		E5510420280AE588008C66DA /* One-Lab-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "One-Lab-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5510423280AE588008C66DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5510425280AE588008C66DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +33,11 @@
 		E551042C280AE589008C66DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E551042F280AE589008C66DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5510431280AE589008C66DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5510438280AE7CC008C66DA /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		E551043A280AF180008C66DA /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		E551043C280AF319008C66DA /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		E551043F280AF439008C66DA /* ConfigurableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		E5510441280AF524008C66DA /* CellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				252B8E410432BCA6AD3441BC /* Pods_One_Lab_3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60F91DDA27A30CB38A2A3499 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EABF8F7BA7C6115D10ECC48 /* Pods-One-Lab-3.debug.xcconfig */,
+				A289A9154311D6FDB3F3ADBA /* Pods-One-Lab-3.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		849E17DA4EAB890DBEFCC433 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				602D403648306815AF19AA12 /* Pods_One_Lab_3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E5510417280AE588008C66DA = {
 			isa = PBXGroup;
 			children = (
 				E5510422280AE588008C66DA /* One-Lab-3 */,
 				E5510421280AE588008C66DA /* Products */,
+				60F91DDA27A30CB38A2A3499 /* Pods */,
+				849E17DA4EAB890DBEFCC433 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +90,36 @@
 		E5510422280AE588008C66DA /* One-Lab-3 */ = {
 			isa = PBXGroup;
 			children = (
-				E5510423280AE588008C66DA /* AppDelegate.swift */,
-				E5510425280AE588008C66DA /* SceneDelegate.swift */,
+				E5510437280AE59C008C66DA /* Application Layer */,
 				E5510427280AE588008C66DA /* ViewController.swift */,
+				E551043E280AF3E1008C66DA /* Cell */,
 				E5510429280AE588008C66DA /* Main.storyboard */,
 				E551042C280AE589008C66DA /* Assets.xcassets */,
 				E551042E280AE589008C66DA /* LaunchScreen.storyboard */,
 				E5510431280AE589008C66DA /* Info.plist */,
 			);
 			path = "One-Lab-3";
+			sourceTree = "<group>";
+		};
+		E5510437280AE59C008C66DA /* Application Layer */ = {
+			isa = PBXGroup;
+			children = (
+				E5510423280AE588008C66DA /* AppDelegate.swift */,
+				E5510425280AE588008C66DA /* SceneDelegate.swift */,
+			);
+			path = "Application Layer";
+			sourceTree = "<group>";
+		};
+		E551043E280AF3E1008C66DA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E551043A280AF180008C66DA /* UserCell.swift */,
+				E5510441280AF524008C66DA /* CellConfigurator.swift */,
+				E551043C280AF319008C66DA /* TextCell.swift */,
+				E5510438280AE7CC008C66DA /* ImageViewCell.swift */,
+				E551043F280AF439008C66DA /* ConfigurableCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +129,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5510434280AE589008C66DA /* Build configuration list for PBXNativeTarget "One-Lab-3" */;
 			buildPhases = (
+				FB6ECB1BE2C79A5E91773B80 /* [CP] Check Pods Manifest.lock */,
 				E551041C280AE588008C66DA /* Sources */,
 				E551041D280AE588008C66DA /* Frameworks */,
 				E551041E280AE588008C66DA /* Resources */,
+				276E0920C82C026CA3273A3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +190,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		276E0920C82C026CA3273A3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-One-Lab-3/Pods-One-Lab-3-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-One-Lab-3/Pods-One-Lab-3-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-One-Lab-3/Pods-One-Lab-3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB6ECB1BE2C79A5E91773B80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-One-Lab-3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E551041C280AE588008C66DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E5510428280AE588008C66DA /* ViewController.swift in Sources */,
+				E5510439280AE7CC008C66DA /* ImageViewCell.swift in Sources */,
 				E5510424280AE588008C66DA /* AppDelegate.swift in Sources */,
+				E5510440280AF439008C66DA /* ConfigurableCell.swift in Sources */,
+				E5510442280AF524008C66DA /* CellConfigurator.swift in Sources */,
+				E551043B280AF180008C66DA /* UserCell.swift in Sources */,
+				E551043D280AF319008C66DA /* TextCell.swift in Sources */,
 				E5510426280AE588008C66DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +388,7 @@
 		};
 		E5510435280AE589008C66DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EABF8F7BA7C6115D10ECC48 /* Pods-One-Lab-3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +417,7 @@
 		};
 		E5510436280AE589008C66DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A289A9154311D6FDB3F3ADBA /* Pods-One-Lab-3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
