@@ -21,6 +21,9 @@ struct User: Hashable {
 typealias UserCellConfigurator = TableCellConfigurator<UserCell, User>
 
 class UserCell: UITableViewCell, ConfigurableCell {
+    static let didTapButtonAction = "UserCellDidTapButtonAction"
+    static let didTapFollowButtonAction = "UserCellDidTapFollowButtonAction"
+    
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
@@ -32,12 +35,29 @@ class UserCell: UITableViewCell, ConfigurableCell {
         return label
     }()
     
+    private let followButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Follow", for: .normal)
+        button.backgroundColor = .green
+        button.addTarget(self, action: #selector(didTapFollowButton), for: .touchUpInside)
+        return button
+    }()
+    
+    private let button: UIButton = {
+        let button = UIButton()
+        button.setTitle("Click", for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [avatarImageView, nameLabel])
+        let stackView = UIStackView(arrangedSubviews: [avatarImageView, nameLabel, button, followButton])
         stackView.axis = .horizontal
         stackView.spacing = 8
         return stackView
     }()
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -50,7 +70,16 @@ class UserCell: UITableViewCell, ConfigurableCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        followButton.layer.cornerRadius = 10
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
+    }
+    
+    @objc private func didTapFollowButton() {
+        CellAction.custom(type(of: self).didTapFollowButtonAction).invoke(cell: self)
+    }
+    
+    @objc private func didTapButton() {
+        CellAction.custom(type(of: self).didTapButtonAction).invoke(cell: self)
     }
     
     func configure(data: User) {
@@ -59,16 +88,23 @@ class UserCell: UITableViewCell, ConfigurableCell {
     }
     
     private func layoutUI() {
-        contentView.addSubview(stackView)
-        stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(8)
-        }
+        confgigureStackView()
         
         avatarImageView.snp.makeConstraints {
             $0.size.equalTo(50)
         }
     }
     
+    private func confgigureStackView() {
+        contentView.addSubview(stackView)
+        stackView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(16)
+        }
+//        button.snp.makeConstraints {
+//            $0.width.equalTo(40)
+//            $0.height.equalTo(20)
+//        }
+    }
     override func prepareForReuse() {
         super.prepareForReuse()
         accessoryType = .none

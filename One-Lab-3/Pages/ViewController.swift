@@ -24,6 +24,11 @@ class ViewController: UIViewController {
         UserCellConfigurator(item: User(imageName: "avatar", name: "Vasya"))
     ]
     
+    private lazy var tableDirector: TableDirector = {
+        let tableDirector = TableDirector(tableView: tableView, items: items)
+        return tableDirector
+    }()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
        
@@ -33,12 +38,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        cellActionHandlers()
         view.backgroundColor = .white
         title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
-       // tableView.register(ImageViewCell.self, forCellReuseIdentifier: "TableViewCell")
-        tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        tableDirector.tableView.reloadData()
     }
     
     private func configureTableView() {
@@ -47,27 +51,20 @@ class ViewController: UIViewController {
             $0.edges.equalToSuperview()
         }
     }
-
+    
+    private func cellActionHandlers() {
+        self.tableDirector.actionProxy
+            .on(action: .didSelect) { (config: UserCellConfigurator, cell) in
+                
+            }
+            .on(action: .willDisplay) { (config: ImageViewCellConfigurator, cell) in
+                cell.backgroundColor = .gray
+            }.on(action: .custom(UserCell.didTapButtonAction)){ (config: UserCellConfigurator, cell) in
+                print("button did tap")
+            }.on(action: .custom(UserCell.didTapFollowButtonAction)){ (config: UserCellConfigurator, cell) in
+                print("follow button did tap")
+            }
+    }
 }
 
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.row]
-        tableView.register(type(of: item).cellClass, forCellReuseIdentifier: type(of: item).reuseId)
-        let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId, for: indexPath)
-        if indexPath.row == 0 {
-            cell.accessoryType = .detailButton
-        }
-            
-        item.configure(cell: cell)
-        
-        return cell
-    }
-    
-    
-}
 
